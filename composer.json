@@ -1,0 +1,24 @@
+{
+    "name": "nhalstead/webhook-coordinator",
+    "description": "Trigger Webhooks to post data to channels in php. This will work with Slack, Discord, and other systems that use WebHooks.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Noah Halstead",
+            "email": "nhalstead00@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "nhalstead\\Webhook\\": "src"
+        }
+    },
+    "repositories": [
+        {
+            "type": "git",
+            "url": ""
+        }
+    ]
+}
