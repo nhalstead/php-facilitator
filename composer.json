@@ -15,10 +15,16 @@
             "nhalstead\\Webhook\\": "src"
         }
     },
+    "support": {
+        "issues": "https://github.com/nhalstead/PHP-WebhookCoordinator/issues",
+        "source": "https://github.com/nhalstead/PHP-WebhookCoordinator/",
+        "wiki": "https://github.com/nhalstead/PHP-WebhookCoordinator/issues",
+        "docs": "https://github.com/nhalstead/PHP-WebhookCoordinator/wiki"
+    },
     "repositories": [
         {
             "type": "git",
-            "url": ""
+            "url": "https:\/\/github.com\/nhalstead\/PHP-WebhookCoordinator"
         }
     ]
 }

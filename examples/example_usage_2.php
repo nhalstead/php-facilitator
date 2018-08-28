@@ -17,7 +17,7 @@ use nhalstead\WebhookCoordinator;
 use nhalstead\Endpoints\DiscordWebhook;
 
 // Create a New Event
-$newEvent = new DiscordWebhook("https://discordapp.com/api/webhooks/484098987327225888/0SDEC3Zr8V0-japu4Pw9xIQGSjgrCyXniQ-OS3FWHmmQSBGIWXL_utKM91E1cpsMPK4y");
+$newEvent = new DiscordWebhook("[DISCORD WEBHOOK URL]");
 $newEvent->username("John");
 $newEvent->avatar("https://png.icons8.com/clouds/50/000000/megaphone.png");
 $newEvent->message("Hello");
