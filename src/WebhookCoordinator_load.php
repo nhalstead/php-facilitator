@@ -10,6 +10,8 @@
  require_once("Interfaces/EventImp.php");
  require_once("Request/Event.php");
  require_once("Endpoints/DiscordWebhook.php");
+ require_once("Endpoints/SlackWebhook.php");
+ require_once("Endpoints/SlackPack/SlackAttachments.php");
  require_once("WebhookCoordinator.php");
 
 

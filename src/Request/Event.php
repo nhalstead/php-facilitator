@@ -90,13 +90,6 @@ class Event implements EventImp {
    * @return string The Data to Send in the Request.
    */
   public function get_payload_request(){
-/*
-    // Clear Null or Empty Values.
-    foreach ($this->payload as $key => $value) {
-      if($value == null || empty($value)){
-        unset($this->payload[$key]);
-      }
-    }*/
 
     return json_encode($this->payload);
   }
