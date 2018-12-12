@@ -14,6 +14,17 @@ use nhalstead\Interfaces\EventImp;
 class Event implements EventImp {
 
   /**
+   * Allows for Inline instantiation.
+   * Also Added in 5.4 of php cording to link
+   * @link https://stackoverflow.com/a/10072943/5779200
+   */
+   public static function new(){
+     $in = func_get_args();
+     $reflect  = new \ReflectionClass(get_called_class());
+     return $reflect->newInstanceArgs($in);
+   }
+
+  /**
    * Has been Sent Once
    *
    * @var boolean
@@ -48,7 +59,7 @@ class Event implements EventImp {
    *
    * @param string URL of the Endpoint for the Webhook
    */
-  public function __construct(string $url = null, $basicPayload){
+  public function __construct(string $url = null, $basicPayload = array()){
     $this->eventURL = $url;
 
     // Set the Basic Layout of the Payload being Empty.

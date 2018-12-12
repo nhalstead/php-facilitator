@@ -4,6 +4,7 @@ namespace nhalstead\Endpoints;
 
 use nhalstead\Request\Event;
 use nhalstead\Interfaces\EventImp;
+use nhalstead\Interfaces\ObjectImp;
 
 /**
  * Discord Event
@@ -72,6 +73,15 @@ class DiscordWebhook extends Event implements EventImp {
     return $this;
   }
 
+  /**
+   * Add Attachment to the Payload
+   *
+   * @param nhalstead\Interfaces\ObjectImp Event Payload
+   */
+  public function addEmbed(ObjectImp $e){
+    $this->payload['embeds'][] = $e->get_payload();
+    return $this;
+  }
 
 }
 

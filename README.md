@@ -1,12 +1,24 @@
 # WebhookCoordinator
 
-Using the Basic Package you can Post Requests to Slack (Coming soon), Discord and other Services that have WebHook Endpoints with Ease!
+Using the Basic Package you can Post Requests to Slack, Discord and other Services that have WebHook Endpoints with Ease!
 
 This is a package for PHP, So it is PSR4 compliant and can be used with or without composer.
 
 **Zero** Dependencies with exception of `CURL`.
 
 The System is even ready for you to add you own Custom Webhook Endpoints.
+
+
+### Installation
+You can install the package via composer
+>```bash
+>composer require nhalstead/webhook-coordinator
+>```
+Alternatively you can clone the code from GitHub
+>```bash
+>git clone https://github.com/nhalstead/PHP-WebhookCoordinator.git
+>```
+
 
 
 ### How to use:

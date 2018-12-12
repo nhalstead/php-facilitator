@@ -160,7 +160,7 @@ class WebhookCoordinator {
 			$this->debugLog[] = "[  ^CURL   ]   ".curl_error($ch);
 			$this->debugLog[] = "[  ^URL    ]   ".$url;
 			$this->debugLog[] = "[  ^AGENT  ]   "."GitOdin-PHP/".self::VERSION;
-			$this->debugLog[] = "[  ^PAYLOAD]   ".$content;
+			$this->debugLog[] = "[  ^PAYLOAD]   ".$payloadData;
 		}
 		else if($http_code == 200 || $http_code == 201 || $http_code == 204){
 			$this->debugLog[] = "[ REQUEST  ] Good Response from Server!";
