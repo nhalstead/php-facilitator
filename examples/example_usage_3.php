@@ -22,26 +22,31 @@ use nhalstead\Endpoints\DiscordPack\objects\FieldsObject;
 
 // Create a New Event
 $newEvent = new DiscordWebhook("[DISCORD WEBHOOK URL]");
-$newEvent->username("John");
-$newEvent->avatar("https://png.icons8.com/clouds/50/000000/megaphone.png");
+$newEvent->username("Service Bot");
+$newEvent->avatar("https://img.icons8.com/cotton/64/000000/gps-searching.png");
 
 $newEvent->addEmbed(
-  DiscordEmbeds::new()->set("title", "New User joined GitOdin!")
+  DiscordEmbeds::new()->set("title", "New Activity!")
     ->addEmbed("thumbnail", ThumbnailObject::new()
-      ->set("url", "https://png.icons8.com/color/80/000000/face-id.png")
+      ->set("url", "https://img.icons8.com/cotton/64/000000/cloud-broadcasting.png")
     )
     ->addEmbed("footer", FooterObject::new()
-      ->set('text', "ID# 137899")
+      ->set('text', "Status Update from Server #237")
     )
     ->addEmbed("fields", FieldsObject::new()
       ->add(array(
-        "name" => "Name",
-        "value" => "John",
+        "name" => "RAM Usage",
+        "value" => "95%",
         "inline" => true
       ))
       ->add(array(
-        "name" => "Date",
-        "value" => "09/03/2018",
+        "name" => "CPU Usage",
+        "value" => "40%",
+        "inline" => true
+      ))
+      ->add(array(
+        "name" => "Activity",
+        "value" => "New User Migrated to the Server",
         "inline" => true
       ))
     )
