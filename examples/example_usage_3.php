@@ -1,13 +1,14 @@
 <?php
 
 /**
-* Example 2
+* Example 3
 *
 * This will Send an Event Created by the DiscordWebhook
-*  and send it by calling the Static function in WebhookCoordinator to Send the Single Event.
+*  and send it by calling the Static function in WebhookCoordinator to Send
+*  the Single Event, THis example also has access to add Embeds to the Message
+*  by including the Embed element and adding the objects to each of the Embeds,
+*  as needed.
 *
-* The purpos of using the ::sendStat method is to Send a single Request
-*  with the least amount of code but does it all now, when it is called.
 */
 
 require_once("../src/WebhookCoordinator_load.php"); //Without Composer
@@ -25,30 +26,37 @@ $newEvent = new DiscordWebhook("[DISCORD WEBHOOK URL]");
 $newEvent->username("Service Bot");
 $newEvent->avatar("https://img.icons8.com/cotton/64/000000/gps-searching.png");
 
+// Add in the Embed Element to the Message.
 $newEvent->addEmbed(
   DiscordEmbeds::new()->set("title", "New Activity!")
-    ->addEmbed("thumbnail", ThumbnailObject::new()
-      ->set("url", "https://img.icons8.com/cotton/64/000000/cloud-broadcasting.png")
+    ->addEmbed("thumbnail",
+      ThumbnailObject::new()->set("url", "https://img.icons8.com/cotton/64/000000/cloud-broadcasting.png")
     )
-    ->addEmbed("footer", FooterObject::new()
-      ->set('text', "Status Update from Server #237")
+    ->addEmbed("footer",
+      FooterObject::new()->set('text', "Status Update from Server #237")
     )
+    // Add a FieldObject that can contain a Name, Value as well as if its inline.
     ->addEmbed("fields", FieldsObject::new()
-      ->add(array(
-        "name" => "RAM Usage",
-        "value" => "95%",
-        "inline" => true
-      ))
-      ->add(array(
-        "name" => "CPU Usage",
-        "value" => "40%",
-        "inline" => true
-      ))
-      ->add(array(
-        "name" => "Activity",
-        "value" => "New User Migrated to the Server",
-        "inline" => true
-      ))
+        ->add(array(
+          "name" => "RAM Usage",
+          "value" => "95%",
+          "inline" => true
+        ))
+        ->add(array(
+          "name" => "CPU Usage",
+          "value" => "40%",
+          "inline" => true
+        ))
+        ->add(array(
+          "name" => "Pool Tag",
+          "value" => "Pool A",
+          "inline" => true
+        ))
+        ->add(array(
+          "name" => "Activity",
+          "value" => "New User Migrated to the Server",
+          "inline" => false
+        ))
     )
 );
 
