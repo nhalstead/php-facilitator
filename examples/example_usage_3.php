@@ -24,13 +24,13 @@ use nhalstead\Endpoints\DiscordPack\objects\FieldsObject;
 // Create a New Event
 $newEvent = new DiscordWebhook("[DISCORD WEBHOOK URL]");
 $newEvent->username("Service Bot");
-$newEvent->avatar("https://img.icons8.com/cotton/64/000000/gps-searching.png");
+$newEvent->avatar("https://img.icons8.com/color/96/000000/bot.png");
 
 // Add in the Embed Element to the Message.
 $newEvent->addEmbed(
   DiscordEmbeds::new()->set("title", "New Activity!")
     ->addEmbed("thumbnail",
-      ThumbnailObject::new()->set("url", "https://img.icons8.com/cotton/64/000000/cloud-broadcasting.png")
+      ThumbnailObject::new()->set("url", "https://img.icons8.com/color/128/000000/installing-updates.png")
     )
     ->addEmbed("footer",
       FooterObject::new()->set('text', "Status Update from Server #237")

@@ -15,31 +15,35 @@ class Event implements EventImp {
 
   /**
    * Allows for Inline instantiation.
-   * Also Added in 5.4 of php cording to link
+   * Also Added in 5.4 of php according to link
    * @link https://stackoverflow.com/a/10072943/5779200
    */
-   public static function new(){
-     $in = func_get_args();
-     $reflect  = new \ReflectionClass(get_called_class());
-     return $reflect->newInstanceArgs($in);
-   }
+  public static function new(){
+    $in = func_get_args();
+    $reflect  = new \ReflectionClass(get_called_class());
+    return $reflect->newInstanceArgs($in);
+  }
 
   /**
    * Has been Sent Once
    *
    * @var boolean
    */
- public $sentOnce = false;
+  public $sentOnce = false;
 
- /**
-  * Content Type for Web Request
-  *
-  * @var string
-  */
+  /**
+   * Content Type for Web Request
+   * Data type of the content when it uses the output of `get_payload_request`
+   *  make sure if you change it to be XML that the output of `get_payload_request`
+   *  is also setup for XML, otherwise the request should fail with 400.
+   *
+   * @var string
+   */
   protected $contentType = "application/json";
 
   /**
    * Event URL
+   * The URL to contact to send the data to.
    *
    * @var string
    */
@@ -47,6 +51,11 @@ class Event implements EventImp {
 
   /**
    * Payload
+   * Data to send in the Request, This tends to an array full of data.
+   * You can override this default type from an Array to anything as this
+   *  does not have a defined data type. Just be mindfull that the method
+   *  `get_payload_request` is supposed to return a string and by default
+   *  is `json_encode` (expects an array input).
    *
    * @var array
    */
@@ -72,7 +81,7 @@ class Event implements EventImp {
    * @return string The URL
    */
   public function get_url(){
-   return $this->eventURL;
+    return $this->eventURL;
   }
 
   /**
@@ -106,8 +115,6 @@ class Event implements EventImp {
   }
 
 }
-
-
 
 
 ?>

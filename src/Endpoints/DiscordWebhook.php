@@ -15,12 +15,12 @@ use nhalstead\Interfaces\ObjectImp;
 class DiscordWebhook extends Event implements EventImp {
 
   public $payloadBase = [
-    "username" => null, /** Override the Username for the Message */
-    "avatar_url" => null, /** Override Avatar URL for the Message */
-    "content" => "", /** String Data */
-    "tts" => false, /** Text To Speach */
-    "file" => null, /** File Uploads */
-    "embeds" => array() /** Embed Object */
+    "username" => null, // Override the Username for the Message
+    "avatar_url" => null, // Override Avatar URL for the Message
+    "content" => "", // String Data
+    "tts" => false, // Text To Speech
+    "file" => null, // File Uploads
+    "embeds" => array() // Embed Object
   ];
 
   /**
@@ -31,9 +31,9 @@ class DiscordWebhook extends Event implements EventImp {
   }
 
   /**
-   * Toggle the Value for the Text to Speach
+   * Toggle the Value for the Text to Speech
    *
-   * @return Discord Returns Instance of Self.
+   * @return DiscordWebhook Returns Instance of Self.
    */
   public function tts_toggle(){
     $this->payload['tts'] = !$this->payload['tts'];
@@ -44,7 +44,7 @@ class DiscordWebhook extends Event implements EventImp {
    * set the Name to use in the Message
    *
    * @param String The Name to Use when Adding the Message
-   * @return Discord Returns Instance of Self.
+   * @return DiscordWebhook Returns Instance of Self.
    */
   public function username(string $name = null){
     $this->payload['username'] = $name;
@@ -55,7 +55,7 @@ class DiscordWebhook extends Event implements EventImp {
    * Set the Message Content
    *
    * @param String The Message Content
-   * @return Discord Returns Instance of Self.
+   * @return DiscordWebhook Returns Instance of Self.
    */
   public function message(string $message = null){
     $this->payload['content'] = $message;
@@ -66,7 +66,7 @@ class DiscordWebhook extends Event implements EventImp {
    * Set the Icon Content
    *
    * @param String URL to the Image to Use for the Profile Picture.
-   * @return Discord Returns Instance of Self.
+   * @return DiscordWebhook Returns Instance of Self.
    */
   public function avatar(string $url = null){
     $this->payload['avatar_url'] = $url;
