@@ -24,6 +24,9 @@
  require_once("Endpoints/SlackWebhook.php");
  require_once("Endpoints/SlackPack/SlackAttachments.php");
 
+// IFTTT + Dependencies
+ require_once("Endpoints/IFTTTWebhook.php");
+
 // Final Load
  require_once("WebhookCoordinator.php");
 

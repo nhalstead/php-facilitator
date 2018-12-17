@@ -47,6 +47,14 @@ class Event implements EventImp {
    *
    * @var string
    */
+  protected $eventMethod = "POST";
+
+  /**
+   * Event URL
+   * The URL to contact to send the data to.
+   *
+   * @var string
+   */
   protected $eventURL = null;
 
   /**
@@ -76,6 +84,15 @@ class Event implements EventImp {
   }
 
   /**
+   * Return the METHOD to send the Webhook Event as.
+   *
+   * @return string The METHOD
+   */
+  public function get_method(){
+    return $this->eventMethod;
+  }
+
+  /**
    * Return the URL to the Webhook Event
    *
    * @return string The URL
@@ -96,7 +113,7 @@ class Event implements EventImp {
   /**
    * Get the Payload Stored in the Instance
    *
-   * @return Array Payload Data
+   * @return Array|Mixed Payload Data
    */
   public function get_payload(){
     return $this->payload;

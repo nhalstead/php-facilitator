@@ -130,7 +130,7 @@ class WebhookCoordinator {
 			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
 		}
 
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, strtoupper($e->get_method()) );
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $payloadData );
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
