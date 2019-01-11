@@ -10,12 +10,12 @@ The System is even ready for you to add you own Custom Webhook Endpoints.
 
 
 ## Supported Services
-| Name | Full Support |
-|:-----|:-------:|
-| Custom Events | Yes |
-| Slack | Yes |
-| Discord | Yes |
-| IFTTT | Yes |
+| Name | Full Support | Class |
+|:-----|:-------:|:-----:|
+| Custom Events | Yes | |
+| Slack | Yes | nhalstead\Endpoints\SlackWebhook |
+| Discord | Yes | nhalstead\Endpoints\DiscordWebhook |
+| IFTTT | Yes | nhalstead\Endpoints\IFTTTWebhook |
 
 ---
 
