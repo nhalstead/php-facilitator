@@ -9,7 +9,17 @@ This is a package for PHP, So it is PSR4 compliant and can be used with or witho
 The System is even ready for you to add you own Custom Webhook Endpoints.
 
 
-### Installation
+## Supported Services
+| Name | Full Support |
+|:-----|:-------:|
+| Custom Events | Yes |
+| Slack | Yes |
+| Discord | Yes |
+| IFTTT | Yes |
+
+---
+
+## Installation
 You can install the package via composer
 >```bash
 >composer require nhalstead/webhook-coordinator
@@ -19,9 +29,7 @@ Alternatively you can clone the code from GitHub
 >git clone https://github.com/nhalstead/PHP-WebhookCoordinator.git
 >```
 
-
-
-### How to use:
+## How to use:
 > Load the Package using Composer
 >```php
 >require_once("../vendor/autoload.php"); // Composer Method, Loading by PSR4
@@ -57,5 +65,5 @@ Alternatively you can clone the code from GitHub
 > For more Examples check out the /examples folder.
 
 
-# Contributors
+## Contributors
 - nhalstead @ https://github.com/nhalstead
