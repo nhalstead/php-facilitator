@@ -136,7 +136,7 @@ class Facilitator
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $payloadData);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
-		curl_setopt($ch, CURLOPT_USERAGENT, "WebhookCoordinator/" . self::VERSION);
+		curl_setopt($ch, CURLOPT_USERAGENT, "PHP-Facilitator/" . self::VERSION);
 		curl_setopt($ch, CURLOPT_HTTPHEADER, array(
 			'Content-Type: ' . $e->get_type(),
 			'Content-Length: ' . strlen($payloadData)
