@@ -1,4 +1,4 @@
-# WebhookCoordinator
+# PHP Webhook Facilitator
 
 Using the Basic Package you can Post Requests to Slack, Discord and other Services that have WebHook Endpoints with Ease!
 
