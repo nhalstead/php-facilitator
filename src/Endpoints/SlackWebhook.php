@@ -1,9 +1,9 @@
 <?php
 
-namespace nhalstead\Endpoints;
+namespace nhalstead\Facilitator\Endpoints;
 
-use nhalstead\Request\Event;
-use nhalstead\Interfaces\EventImp;
+use nhalstead\Facilitator\Request\Event;
+use nhalstead\Facilitator\Interfaces\EventInterface;
 
 /**
  * Slack Event
@@ -13,39 +13,43 @@ use nhalstead\Interfaces\EventImp;
  * @link https://api.slack.com/docs/slack-button#register_your_slack_app
  * @link https://api.slack.com/apps?new_app=1
  */
-class SlackWebhook extends Event implements EventImp {
+class SlackWebhook extends Event implements EventInterface
+{
 
-  public $payloadBase = [
-    "text" => "", /** String Data */
-    "attachments" => [] /** Extra Data */
-  ];
+	public $payloadBase = [
+		"text" => "", /** String Data */
+		"attachments" => []/** Extra Data */
+	];
 
-  /**
-   * Call Parent with the Basic Payload Layout.
-   */
-  public function __construct(string $url){
-    parent::__construct($url, $this->payloadBase);
-  }
+	/**
+	 * Call Parent with the Basic Payload Layout.
+	 */
+	public function __construct(string $url)
+	{
+		parent::__construct($url, $this->payloadBase);
+	}
 
-  /**
-   * Set the Message Content
-   *
-   * @param String The Message Content
-   * @return Discord Returns Instance of Self.
-   */
-  public function message(string $message = null){
-    $this->payload['text'] = $message;
-    return $this;
-  }
+	/**
+	 * Set the Message Content
+	 *
+	 * @param string $message The Message Content
+	 * @return self Returns Instance of Self.
+	 */
+	public function message(string $message = null)
+	{
+		$this->payload['text'] = $message;
+		return $this;
+	}
 
-  /**
-   * Add Attachment to the Payload
-   *
-   * @param nhalstead\Interfaces\EventImp Event Payload
-   */
-  public function addAttachment(EventImp $e){
-    $this->payload['attachments'][] = $e->get_payload();
-  }
+	/**
+	 * Add Attachment to the Payload
+	 *
+	 * @param EventInterface $e Event Payload
+	 */
+	public function addAttachment(EventInterface $e)
+	{
+		$this->payload['attachments'][] = $e->get_payload();
+	}
 
 }
 
