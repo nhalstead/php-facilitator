@@ -12,6 +12,13 @@ namespace nhalstead\Interfaces;
 interface EventImp {
 
   /**
+   * Return the METHOD to send the Webhook Event as.
+   *
+   * @return string The METHOD
+   */
+  public function get_method();
+
+  /**
    * Return the URL to the Webhook Event
    *
    * @return string The URL
@@ -28,7 +35,7 @@ interface EventImp {
   /**
    * Get the Payload Stored in the Instance
    *
-   * @return Array Payload Data
+   * @return Array|Mixed Payload Data
    */
   public function get_payload();
 

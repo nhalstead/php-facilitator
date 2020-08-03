@@ -130,7 +130,7 @@ class WebhookCoordinator {
 			curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, FALSE);
 		}
 
-		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, "POST");
+		curl_setopt($ch, CURLOPT_CUSTOMREQUEST, strtoupper($e->get_method()) );
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $payloadData );
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
 		curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
@@ -160,7 +160,7 @@ class WebhookCoordinator {
 			$this->debugLog[] = "[  ^CURL   ]   ".curl_error($ch);
 			$this->debugLog[] = "[  ^URL    ]   ".$url;
 			$this->debugLog[] = "[  ^AGENT  ]   "."GitOdin-PHP/".self::VERSION;
-			$this->debugLog[] = "[  ^PAYLOAD]   ".$content;
+			$this->debugLog[] = "[  ^PAYLOAD]   ".$payloadData;
 		}
 		else if($http_code == 200 || $http_code == 201 || $http_code == 204){
 			$this->debugLog[] = "[ REQUEST  ] Good Response from Server!";
