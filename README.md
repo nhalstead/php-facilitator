@@ -8,14 +8,13 @@ This is a package for PHP, So it is PSR4 compliant and can be used with or witho
 
 The System is even ready for you to add you own Custom Webhook Endpoints.
 
-
 ## Supported Services
-| Name | Full Support | Class |
-|:-----|:-------:|:-----:|
-| Custom Events | Yes | |
-| Slack | Yes | nhalstead\Endpoints\SlackWebhook |
-| Discord | Yes | nhalstead\Endpoints\DiscordWebhook |
-| IFTTT | Yes | nhalstead\Endpoints\IFTTTWebhook |
+| Name          | Full Support |               Class                |
+|:--------------|:------------:|:----------------------------------:|
+| Custom Events |     Yes      |                                    |
+| Slack         |     Yes      |  nhalstead\Endpoints\SlackWebhook  |
+| Discord       |     Yes      | nhalstead\Endpoints\DiscordWebhook |
+| IFTTT         |     Yes      |  nhalstead\Endpoints\IFTTTWebhook  |
 
 ---
 
@@ -26,27 +25,31 @@ You can install the package via composer
 >```
 Alternatively you can clone the code from GitHub
 >```bash
->git clone https://github.com/nhalstead/PHP-WebhookCoordinator.git
+>git clone https://github.com/nhalstead/php-facilitator.git
 >```
 
 ## How to use:
 > Load the Package using Composer
 >```php
->require_once("../vendor/autoload.php"); // Composer Method, Loading by PSR4
->use nhalstead\WebhookCoordinator;
+>```php
+>>require_once("../vendor/autoload.php"); // Composer Method, Loading by PSR4
+>>use nhalstead\Facilitator\Facilitator;
+>>```
 >```
 
 >Load the Package **not** using Composer (Downloaded from GitHub)
 >```php
->require_once("../src/WebhookCoordinator_load.php"); // Manual Load, no PSR4 Autoload
->use nhalstead\WebhookCoordinator;
+>```php
+>>require_once("../src/WebhookCoordinator_load.php"); // Manual Load, no PSR4 Autoload
+>>use nhalstead\Facilitator\Facilitator;
+>>```
 >```
 
 
 > This will send an Payload to a Specific channel on the specified event.
 >```php
->use nhalstead\WebhookCoordinator;
->use nhalstead\Endpoints\DiscordWebhook;
+>use nhalstead\Facilitator\WebhookCoordinator;
+>use nhalstead\Facilitator\Endpoints\DiscordWebhook;
 >
 > // Create new Queue
 >$queue = new WebhookCoordinator();
