@@ -21,7 +21,7 @@ The System is even ready for you to add you own Custom Webhook Endpoints.
 ## Installation
 You can install the package via composer
 >```bash
->composer require nhalstead/webhook-coordinator
+>composer require nhalstead/php-facilitator
 >```
 Alternatively you can clone the code from GitHub
 >```bash
@@ -37,22 +37,14 @@ Alternatively you can clone the code from GitHub
 >>```
 >```
 
->Load the Package **not** using Composer (Downloaded from GitHub)
->```php
->```php
->>require_once("../src/WebhookCoordinator_load.php"); // Manual Load, no PSR4 Autoload
->>use nhalstead\Facilitator\Facilitator;
->>```
->```
-
 
 > This will send an Payload to a Specific channel on the specified event.
 >```php
->use nhalstead\Facilitator\WebhookCoordinator;
+>use nhalstead\Facilitator\Facilitator;
 >use nhalstead\Facilitator\Endpoints\DiscordWebhook;
 >
 > // Create new Queue
->$queue = new WebhookCoordinator();
+>$queue = new Facilitator();
 >
 >// Make new Event
 >$newEvent = new DiscordWebhook("[DISCORD WEBHOOK URL]");
