@@ -1,5 +1,5 @@
 {
-    "name": "nhalstead/webhook-coordinator",
+    "name": "nhalstead/php-facilitator",
     "description": "Trigger Webhooks to post data to channels in php. This will work with Slack, Discord, and other systems that use WebHooks.",
     "type": "library",
     "license": "MIT",
@@ -18,24 +18,25 @@
         }
     ],
     "require": {
-      "php": ">= 5.3.0",
-      "ext-curl": "*"
+      "php": ">=7.0",
+      "ext-curl": "*",
+      "ext-json": "*"
     },
     "autoload": {
         "psr-4": {
-            "nhalstead\\Webhook\\": "src"
+            "nhalstead\\Facilitator\\": "src"
         }
     },
     "support": {
-        "issues": "https://github.com/nhalstead/PHP-WebhookCoordinator/issues",
-        "source": "https://github.com/nhalstead/PHP-WebhookCoordinator/",
-        "wiki": "https://github.com/nhalstead/PHP-WebhookCoordinator/issues",
-        "docs": "https://github.com/nhalstead/PHP-WebhookCoordinator/wiki"
+        "issues": "https://github.com/nhalstead/php-facilitator/issues",
+        "source": "https://github.com/nhalstead/php-facilitator/",
+        "wiki": "https://github.com/nhalstead/php-facilitator/issues",
+        "docs": "https://github.com/nhalstead/php-facilitator/wiki"
     },
     "repositories": [
         {
             "type": "git",
-            "url": "https:\/\/github.com\/nhalstead\/PHP-WebhookCoordinator"
+            "url": "https:\/\/github.com\/nhalstead\/php-facilitator"
         }
     ]
 }
