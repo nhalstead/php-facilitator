@@ -15,7 +15,7 @@ use nhalstead\Facilitator\Facilitator;
 use nhalstead\Facilitator\Endpoints\SlackWebhook;
 
 // Create a New Event
-$newEvent = new SlackWebhook("[SLACK WEBHOOK URL]");
+$newEvent = new SlackWebhook("https://hooks.slack.com/services/xyz");
 $newEvent->message("Hello From the Other Side!");
 
 // Start a Queue Worker

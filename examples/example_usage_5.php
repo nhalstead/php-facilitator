@@ -15,7 +15,7 @@ use nhalstead\Facilitator\Facilitator;
 use nhalstead\Facilitator\Endpoints\IFTTTWebhook;
 
 // Create a New Event
-$newEvent = new IFTTTWebhook("[WEBHOOK Secret]", "[Event]");
+$newEvent = new IFTTTWebhook("[Webhook Secret]", "[Event Name]");
 $newEvent->value1("Testing");
 
 // Call Worker to Send a Single Event

@@ -17,7 +17,7 @@ use nhalstead\Facilitator\Endpoints\DiscordPack\DiscordEmbeds;
 use nhalstead\Facilitator\Endpoints\DiscordPack\Objects\FieldsObject;
 
 // Create a New Event
-$newEvent = new DiscordWebhook("[DISCORD WEBHOOK URL]");
+$newEvent = new DiscordWebhook("https://discordapp.com/api/webhooks/xyz");
 $newEvent->username("Service Bot");
 $newEvent->avatar("https://img.icons8.com/color/96/000000/bot.png");
 
