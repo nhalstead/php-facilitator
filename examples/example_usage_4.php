@@ -7,15 +7,14 @@
 *  of Bitcoin and post the USD and GBP value followed by posting it to the
 *  channel that the Webhook is attached to.
 *
-*/
+**/
 
-require_once("../src/WebhookCoordinator_load.php"); //Without Composer
-//require_once("../vendor/autoload.php"); //With Composer
+require_once("../vendor/autoload.php");
 
-use nhalstead\WebhookCoordinator;
-use nhalstead\Endpoints\DiscordWebhook;
-use nhalstead\Endpoints\DiscordPack\DiscordEmbeds;
-use nhalstead\Endpoints\DiscordPack\objects\FieldsObject;
+use nhalstead\Facilitator\Facilitator;
+use nhalstead\Facilitator\Endpoints\DiscordWebhook;
+use nhalstead\Facilitator\Endpoints\DiscordPack\DiscordEmbeds;
+use nhalstead\Facilitator\Endpoints\DiscordPack\Objects\FieldsObject;
 
 // Create a New Event
 $newEvent = new DiscordWebhook("[DISCORD WEBHOOK URL]");
@@ -43,19 +42,19 @@ $newEvent->addEmbed(
 );
 
 // Call Worker to Send a Single Event
-WebhookCoordinator::sendStat($newEvent);
+Facilitator::sendStat($newEvent);
 
 
 /**
  *** Dependency Function to make the Example Operate ***
  */
 
- /**
-  * This is a Test Function for Testing
-  *
-  * @param String Web Address to Request the Data from.
-  * @param false|Array Json Data or False, Failed to Request or not 200 Response Code
-  */
+/**
+ * This is a Test Function for Testing
+ *
+ * @param string $url Web Address to Request the Data from.
+ * @return bool|mixed Json Data or False, Failed to Request or not 200 Response Code
+ */
  function get_json($url = null){
    if($url == null){
      return false;

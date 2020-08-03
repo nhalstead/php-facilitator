@@ -9,17 +9,16 @@
 *
 */
 
-require_once("../src/WebhookCoordinator_load.php"); //Without Composer
-//require_once("../vendor/autoload.php"); //With Composer
+require_once("../vendor/autoload.php");
 
-use nhalstead\WebhookCoordinator;
-use nhalstead\Endpoints\IFTTTWebhook;
+use nhalstead\Facilitator\Facilitator;
+use nhalstead\Facilitator\Endpoints\IFTTTWebhook;
 
 // Create a New Event
 $newEvent = new IFTTTWebhook("[WEBHOOK Secret]", "[Event]");
 $newEvent->value1("Testing");
 
 // Call Worker to Send a Single Event
-WebhookCoordinator::sendStat($newEvent);
+Facilitator::sendStat($newEvent);
 
 ?>

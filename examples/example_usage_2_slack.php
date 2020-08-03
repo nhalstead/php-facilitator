@@ -9,12 +9,11 @@
 * This Example Connects to Slack and Sends a Message With an Attachment.
 */
 
-require_once("../src/WebhookCoordinator_load.php"); //Without Composer
-//require_once("../vendor/autoload.php"); //With Composer
+require_once("../vendor/autoload.php");
 
-use nhalstead\WebhookCoordinator;
-use nhalstead\Endpoints\SlackWebhook;
-use nhalstead\Endpoints\SlackPack\SlackAttachments;
+use nhalstead\Facilitator\Facilitator;
+use nhalstead\Facilitator\Endpoints\SlackWebhook;
+use nhalstead\Facilitator\Endpoints\SlackPack\SlackAttachments;
 
 // Create a New Event
 $newEvent = new SlackWebhook("[SLACK WEBHOOK]");
@@ -29,12 +28,8 @@ $newEvent->addAttachment($attachment);
 
 // Start a Queue Worker
 // Add the New Event to The Queue
-$queue = new WebhookCoordinator();
+$queue = new Facilitator();
 $queue->addEvent($newEvent);
 $queue->sendEvents();
-
-
-// Print Debug Trace
-print_r($queue->debugLog);
 
 ?>

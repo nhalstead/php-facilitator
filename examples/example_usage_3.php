@@ -11,15 +11,14 @@
 *
 */
 
-require_once("../src/WebhookCoordinator_load.php"); //Without Composer
-//require_once("../vendor/autoload.php"); //With Composer
+require_once("../vendor/autoload.php");
 
-use nhalstead\WebhookCoordinator;
-use nhalstead\Endpoints\DiscordWebhook;
-use nhalstead\Endpoints\DiscordPack\DiscordEmbeds;
-use nhalstead\Endpoints\DiscordPack\objects\FooterObject;
-use nhalstead\Endpoints\DiscordPack\objects\ThumbnailObject;
-use nhalstead\Endpoints\DiscordPack\objects\FieldsObject;
+use nhalstead\Facilitator\Facilitator;
+use nhalstead\Facilitator\Endpoints\DiscordWebhook;
+use nhalstead\Facilitator\Endpoints\DiscordPack\DiscordEmbeds;
+use nhalstead\Facilitator\Endpoints\DiscordPack\Objects\FooterObject;
+use nhalstead\Facilitator\Endpoints\DiscordPack\Objects\ThumbnailObject;
+use nhalstead\Facilitator\Endpoints\DiscordPack\Objects\FieldsObject;
 
 // Create a New Event
 $newEvent = new DiscordWebhook("[DISCORD WEBHOOK URL]");
@@ -68,6 +67,6 @@ $newEvent->addEmbed(
 //        add_field( new FieldObject()->title("Some Title") )
 
 // Call Worker to Send a Single Event
-WebhookCoordinator::sendStat($newEvent);
+Facilitator::sendStat($newEvent);
 
 ?>
