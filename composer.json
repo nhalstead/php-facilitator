@@ -18,13 +18,13 @@
         }
     ],
     "require": {
-      "php": ">=7.0",
+      "php": "^7.0",
       "ext-curl": "*",
       "ext-json": "*"
     },
     "autoload": {
         "psr-4": {
-            "nhalstead\\Facilitator\\": "src"
+            "nhalstead\\Facilitator\\": "src/"
         }
     },
     "support": {
@@ -38,5 +38,15 @@
             "type": "git",
             "url": "https:\/\/github.com\/nhalstead\/php-facilitator"
         }
-    ]
+    ],
+    "extra": {
+        "laravel": {
+            "aliases": {
+                "Facilitator": "nhalstead\\Facilitator\\Facades\\Facilitator"
+            }
+        }
+    },
+    "suggest": {
+        "illuminate/support": "Required for Laravel Service Providers"
+    }
 }
