@@ -22,6 +22,8 @@ class IFTTTWebhook extends Event implements EventInterface
 
 	/**
 	 * Call Parent with the Basic Payload Layout and the Secret and Event Name.
+	 * @param string $secret
+	 * @param string $event
 	 */
 	public function __construct(string $secret, string $event)
 	{
