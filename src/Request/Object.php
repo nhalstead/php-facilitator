@@ -22,7 +22,7 @@ class Object implements ObjectInterface
 	public static function new()
 	{
 		$in = func_get_args();
-		$reflect = new ReflectionClass(get_called_class());
+		$reflect = new \ReflectionClass(get_called_class());
 		return $reflect->newInstanceArgs($in);
 	}
 

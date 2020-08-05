@@ -23,7 +23,7 @@ class Event implements EventInterface
 	public static function new()
 	{
 		$in = func_get_args();
-		$reflect = new ReflectionClass(get_called_class());
+		$reflect = new \ReflectionClass(get_called_class());
 		return $reflect->newInstanceArgs($in);
 	}
 
@@ -121,7 +121,7 @@ class Event implements EventInterface
 	/**
 	 * Get the Payload Stored in the Instance
 	 *
-	 * @return Array|Mixed Payload Data
+	 * @return array|mixed Payload Data
 	 */
 	public function get_payload()
 	{
