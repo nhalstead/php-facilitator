@@ -3,7 +3,6 @@
 namespace nhalstead\Facilitator\Request;
 
 use nhalstead\Facilitator\Interfaces\EventInterface;
-use ReflectionClass;
 
 /**
  * Event
@@ -19,6 +18,7 @@ class Event implements EventInterface
 	 * Allows for Inline instantiation.
 	 *
 	 * @link https://stackoverflow.com/a/10072943/5779200
+	 * @throws \ReflectionException
 	 */
 	public static function new()
 	{

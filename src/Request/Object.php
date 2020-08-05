@@ -3,7 +3,6 @@
 namespace nhalstead\Facilitator\Request;
 
 use nhalstead\Facilitator\Interfaces\ObjectInterface;
-use ReflectionClass;
 
 /**
  * Object
@@ -18,6 +17,7 @@ class Object implements ObjectInterface
 	 * Allows for Inline instantiation.
 	 * Also Added in 5.4 of php cording to link
 	 * @link https://stackoverflow.com/a/10072943/5779200
+	 * @throws \ReflectionException
 	 */
 	public static function new()
 	{
