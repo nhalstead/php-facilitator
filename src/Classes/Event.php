@@ -1,6 +1,6 @@
 <?php
 
-namespace nhalstead\Facilitator\Request;
+namespace nhalstead\Facilitator\Classes;
 
 use nhalstead\Facilitator\Interfaces\EventInterface;
 
@@ -130,7 +130,7 @@ class Event implements EventInterface
 
 	/**
 	 * Called to do the encoding for this package.
-	 * Think of this as the Encoding or Serialize funciton.
+	 * Think of this as the Encoding or Serialize function.
 	 * This allow for different formats of WebHook APIs, XML, JSON, Form-Data, etc.
 	 *
 	 * @return string The Data to Send in the Request.

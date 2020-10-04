@@ -1,6 +1,6 @@
 <?php
 
-namespace nhalstead\Facilitator\Request;
+namespace nhalstead\Facilitator\Classes;
 
 use nhalstead\Facilitator\Interfaces\ObjectInterface;
 
@@ -15,7 +15,7 @@ class Object implements ObjectInterface
 
 	/**
 	 * Allows for Inline instantiation.
-	 * Also Added in 5.4 of php cording to link
+	 *
 	 * @link https://stackoverflow.com/a/10072943/5779200
 	 * @throws \ReflectionException
 	 */
@@ -41,19 +41,6 @@ class Object implements ObjectInterface
 	protected $payloadBase = array();
 
 	/**
-	 * Create Instance and Pass in the URL to the Webhook
-	 * This also Uses the $this->basicPayload to set the basic
-	 *  layout of the payload on init.
-	 *
-	 * @param string URL of the Endpoint for the Webhook
-	 */
-	public function __construct()
-	{
-		// Set the Basic Layout of the Payload being Empty.
-		$this->payload = $this->payloadBase;
-	}
-
-	/**
 	 * Return the Object Data.
 	 *
 	 * @return array The Data to Return
@@ -65,7 +52,7 @@ class Object implements ObjectInterface
 		 * Clean up Values that are not set.
 		 */
 		foreach ($this->payload as $i => $value) {
-			if (is_array($value) == false) {
+			if (!is_array($value)) {
 				if (trim($value) === '' || $value === null) {
 					unset($this->payload[$i]);
 				}
