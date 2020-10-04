@@ -2,7 +2,7 @@
 
 namespace nhalstead\Facilitator\Endpoints;
 
-use nhalstead\Facilitator\Request\Event;
+use nhalstead\Facilitator\Classes\Event;
 use nhalstead\Facilitator\Interfaces\EventInterface;
 use nhalstead\Facilitator\Interfaces\ObjectInterface;
 
@@ -26,6 +26,8 @@ class DiscordWebhook extends Event implements EventInterface
 
 	/**
 	 * Call Parent with the Basic Payload Layout.
+	 *
+	 * @param string $url
 	 */
 	public function __construct(string $url)
 	{
@@ -82,7 +84,8 @@ class DiscordWebhook extends Event implements EventInterface
 	/**
 	 * Add Attachment to the Payload
 	 *
-	 * @param ObjectInterface Event Payload
+	 * @param ObjectInterface $e Event Payload
+	 * @return DiscordWebhook
 	 */
 	public function addEmbed(ObjectInterface $e)
 	{

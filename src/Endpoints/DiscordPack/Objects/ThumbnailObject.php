@@ -2,7 +2,7 @@
 
 namespace nhalstead\Facilitator\Endpoints\DiscordPack\Objects;
 
-use nhalstead\Facilitator\Request\Object;
+use nhalstead\Facilitator\Classes\Object;
 use nhalstead\Facilitator\Interfaces\ObjectInterface;
 
 /**
@@ -19,7 +19,7 @@ class ThumbnailObject extends Object implements ObjectInterface
 		"filename" => "", // name of file attached
 		"size" => 0, // size of file in bytes
 		"url" => "", // source url of file
-		"proxy_url" => "", //	a proxied url of file
+		"proxy_url" => "", // a proxied url of file
 		"height" => 0,
 		"width" => 0
 	];

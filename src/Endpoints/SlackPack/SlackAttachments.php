@@ -2,13 +2,12 @@
 
 namespace nhalstead\Facilitator\Endpoints\SlackPack;
 
-use nhalstead\Facilitator\Request\Event;
+use nhalstead\Facilitator\Classes\Event;
 use nhalstead\Facilitator\Interfaces\EventInterface;
 
 /**
  * Slack Event
  *
- * @parent nhalstead\Request\Event
  * @link https://api.slack.com/incoming-webhooks#posting_with_webhooks
  */
 class SlackAttachments extends Event implements EventInterface

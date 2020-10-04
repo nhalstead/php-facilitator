@@ -2,7 +2,7 @@
 
 namespace nhalstead\Facilitator\Endpoints;
 
-use nhalstead\Facilitator\Request\Event;
+use nhalstead\Facilitator\Classes\Event;
 use nhalstead\Facilitator\Interfaces\EventInterface;
 
 /**
@@ -23,6 +23,8 @@ class SlackWebhook extends Event implements EventInterface
 
 	/**
 	 * Call Parent with the Basic Payload Layout.
+	 *
+	 * @param string $url
 	 */
 	public function __construct(string $url)
 	{

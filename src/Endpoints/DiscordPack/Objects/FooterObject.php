@@ -2,7 +2,7 @@
 
 namespace nhalstead\Facilitator\Endpoints\DiscordPack\Objects;
 
-use nhalstead\Facilitator\Request\Object;
+use nhalstead\Facilitator\Classes\Object;
 use nhalstead\Facilitator\Interfaces\ObjectInterface;
 
 /**
@@ -32,7 +32,6 @@ class FooterObject extends Object implements ObjectInterface
 		$this->payload[$key] = $value;
 		return $this;
 	}
-
 
 }
 

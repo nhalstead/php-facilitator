@@ -2,7 +2,7 @@
 
 namespace nhalstead\Facilitator\Endpoints;
 
-use nhalstead\Facilitator\Request\Event;
+use nhalstead\Facilitator\Classes\Event;
 use nhalstead\Facilitator\Interfaces\EventInterface;
 
 /**
@@ -22,6 +22,7 @@ class IFTTTWebhook extends Event implements EventInterface
 
 	/**
 	 * Call Parent with the Basic Payload Layout and the Secret and Event Name.
+	 *
 	 * @param string $secret
 	 * @param string $event
 	 */
