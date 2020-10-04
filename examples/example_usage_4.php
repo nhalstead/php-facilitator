@@ -14,7 +14,6 @@ require_once("../vendor/autoload.php");
 use nhalstead\Facilitator\Facilitator;
 use nhalstead\Facilitator\Endpoints\DiscordWebhook;
 use nhalstead\Facilitator\Endpoints\DiscordPack\DiscordEmbeds;
-use nhalstead\Facilitator\Endpoints\DiscordPack\Objects\FieldsObject;
 
 // Create a New Event
 $newEvent = new DiscordWebhook("https://discordapp.com/api/webhooks/xyz");
@@ -25,20 +24,20 @@ $d = get_json('https://api.coindesk.com/v1/bpi/currentprice.json');
 
 // Add in the Embed Element to the Message.
 $newEvent->addEmbed(
-  DiscordEmbeds::new()->set("title", "Bitcoin Value")
+    (new DiscordEmbeds())->set("title", "Bitcoin Value")
     // Add a FieldObject that can contain a Name, Value as well as if its inline.
-    ->addEmbed("fields", FieldsObject::new()
-        ->add(array(
-          "name" => "USD Value",
-          "value" => "$".$d['bpi']['USD']['rate'],
-          "inline" => true
-        ))
-        ->add(array(
-          "name" => "British Pound Value",
-          "value" => "£".$d['bpi']['GBP']['rate'],
-          "inline" => true
-        ))
-    )
+    ->addFields([
+        array(
+            "name" => "USD Value",
+            "value" => "$".$d['bpi']['USD']['rate'],
+            "inline" => true
+        ),
+        array(
+            "name" => "British Pound Value",
+            "value" => "£".$d['bpi']['GBP']['rate'],
+            "inline" => true
+        )
+    ])
 );
 
 // Call Worker to Send a Single Event

@@ -3,6 +3,9 @@
 namespace nhalstead\Facilitator\Endpoints\DiscordPack;
 
 use nhalstead\Facilitator\Classes\Object;
+use nhalstead\Facilitator\Endpoints\DiscordPack\Objects\FieldsObject;
+use nhalstead\Facilitator\Endpoints\DiscordPack\Objects\FooterObject;
+use nhalstead\Facilitator\Endpoints\DiscordPack\Objects\ThumbnailObject;
 use nhalstead\Facilitator\Interfaces\ObjectInterface;
 
 /**
@@ -101,6 +104,39 @@ class DiscordEmbeds extends Object implements ObjectInterface
 		return $this;
 	}
 
+	/**
+	 * Add Thumbnail to the Payload
+	 *
+	 * @param ThumbnailObject $e Event Payload
+	 * @return DiscordEmbeds
+	 */
+	public function addThumbnail(ThumbnailObject $e)
+	{
+		return $this->addEmbed("thumbnail", $e);
+	}
+
+	/**
+	 * Add Footer to the Payload
+	 *
+	 * @param FooterObject $e Event Payload
+	 * @return DiscordEmbeds
+	 */
+	public function addFooter(FooterObject $e)
+	{
+		return $this->addEmbed("footer", $e);
+	}
+
+	/**
+	 * Add Footer to the Payload
+	 *
+	 * @param array $e Event Payload
+	 * @return DiscordEmbeds
+	 */
+	public function addFields(array $e)
+	{
+		$obj = (new FieldsObject)->set($e);
+		return $this->addEmbed("fields", $obj);
+	}
 
 }
 
