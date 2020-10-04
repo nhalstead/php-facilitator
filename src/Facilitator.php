@@ -46,7 +46,7 @@ class Facilitator
 	}
 
 	/**
-	 * Send a Single Event, Clalled Staticly
+	 * Send a Single Event, Called Statically
 	 *
 	 * @param EventInterface $e The Webhook Event to Send.
 	 * @return Facilitator
@@ -59,19 +59,6 @@ class Facilitator
 		$t = new self();
 		$t->send($e);
 		return $t;
-	}
-
-	/**
-	 * Send a Single Event.
-	 *
-	 * @param EventInterface $e Event To Send
-	 * @throws UnauthorizedException
-	 * @throws ServerErrorException
-	 * @throws UnhandledException
-	 */
-	public function sendEvent(EventInterface $e)
-	{
-		$this->send($e);
 	}
 
 	/**
@@ -120,7 +107,7 @@ class Facilitator
 		$url = $e->get_url();
 		$ch = curl_init($url);
 
-		$payloadData = $e->get_payload_request(); // Set Here becuase it is used twice below, Reduce Serialize Time.
+		$payloadData = $e->get_payload_request(); // Set Here because it is used twice below, Reduce Serialize Time.
 
 		// Check if the Root Pem file is defined, Yes? Verify Connection
 		if (isset($this->pem_cert) && @file_exists($this->pem_cert)) {
