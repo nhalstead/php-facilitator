@@ -18,7 +18,7 @@ class Facilitator
 	/**
 	 * The Queue that holds all of the events to send.
 	 *
-	 * @var array
+	 * @var array<EventInterface>
 	 */
 	private $queue = [];
 
@@ -80,6 +80,9 @@ class Facilitator
 	{
 		foreach ($this->queue as $i => $event) {
 
+			/**
+			 * @var $event EventInterface
+			 */
 			if ($event->sentOnce == true) {
 				// Skip is already Sent.
 				continue;
